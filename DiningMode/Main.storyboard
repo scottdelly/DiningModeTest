@@ -47,7 +47,7 @@
                                 </constraints>
                                 <state key="normal" title="Show Banner"/>
                                 <connections>
-                                    <action selector="buttonShowBannerTUIAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AeC-Bj-hXp"/>
+                                    <action selector="buttonShowBanner:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YkJ-hl-wXs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wud-mL-qxJ">
@@ -99,11 +99,24 @@
                                     <action selector="buttonToggleBanner:" destination="LBr-h7-mv3" eventType="touchUpInside" id="wo5-Fi-8UI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmD-Jh-p9G">
+                                <rect key="frame" x="16" y="66" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Myp-9X-dz7"/>
+                                </constraints>
+                                <state key="normal" title="Present Modal"/>
+                                <connections>
+                                    <action selector="presentModalTUIAction:" destination="LBr-h7-mv3" eventType="touchUpInside" id="5ye-BT-CoK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5iP-Q9-s9d" firstAttribute="trailing" secondItem="MAI-W6-lLH" secondAttribute="trailingMargin" id="0Vv-RN-1mW"/>
                             <constraint firstItem="5iP-Q9-s9d" firstAttribute="leading" secondItem="MAI-W6-lLH" secondAttribute="leadingMargin" id="QJi-RN-RCF"/>
+                            <constraint firstItem="jmD-Jh-p9G" firstAttribute="top" secondItem="5iP-Q9-s9d" secondAttribute="bottom" constant="8" id="UvU-9L-i0C"/>
+                            <constraint firstItem="jmD-Jh-p9G" firstAttribute="leading" secondItem="MAI-W6-lLH" secondAttribute="leadingMargin" id="foe-l0-wjx"/>
+                            <constraint firstItem="jmD-Jh-p9G" firstAttribute="trailing" secondItem="MAI-W6-lLH" secondAttribute="trailingMargin" id="jdV-ZL-GOJ"/>
                             <constraint firstItem="5iP-Q9-s9d" firstAttribute="top" secondItem="rb0-MQ-UdW" secondAttribute="bottom" constant="8" id="rSL-U0-muk"/>
                         </constraints>
                     </view>
