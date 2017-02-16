@@ -16,7 +16,7 @@ class DiningModeVC: UIViewController, StoryboardTrait {
     
     enum DiningModeSection {
         case info(name: String, time: Date, groupSize: Int, photo: Photo?)
-        case address(CLLocation)
+        case address(RestaurantAnnotation)
         case dishes([Dish])
     }
 
@@ -35,7 +35,7 @@ class DiningModeVC: UIViewController, StoryboardTrait {
                 self?.diningModeSections = []
             case .Pass(let reservation):
                 let infoSection = DiningModeSection.info(name: reservation.restaurant.name, time: reservation.localDate, groupSize: reservation.partySize, photo: reservation.restaurant.profilePhoto)
-                let addressSection = DiningModeSection.address(reservation.restaurant.location)
+                let addressSection = DiningModeSection.address(RestaurantAnnotation(reservation: reservation))
                 var finalSections = [infoSection, addressSection]
                 if reservation.restaurant.dishes.count > 0 {
                     let dishSection = DiningModeSection.dishes(reservation.restaurant.dishes)
@@ -83,13 +83,15 @@ extension DiningModeVC: UICollectionViewDataSource {
                 let timeFormatter = DateFormatter()
                 timeFormatter.dateStyle = .none
                 timeFormatter.timeStyle = .short
-                cell.labelDate.text = timeFormatter.string(from: time)
+                cell.labelTime.text = timeFormatter.string(from: time)
                 return cell
-            case .address(let location):
+            case .address(let annotation):
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiningCellMap", for: indexPath) as! DiningCellMap
                 let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-                let region = MKCoordinateRegion(center: location.coordinate, span: span)
+                let region = MKCoordinateRegion(center: annotation.coordinate, span: span)
                 cell.mapView.setRegion(region, animated: false)
+                cell.mapView.addAnnotation(annotation)
+                cell.labelAddress.text = annotation.fullAddress()
                 return cell
             case .dishes:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiningCellDishes", for: indexPath) as! DiningCellDishes

@@ -32,6 +32,7 @@
 		D2D0864D1E55039500C41D71 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0864C1E55039500C41D71 /* ImageService.swift */; };
 		D2D086501E5503E200C41D71 /* OTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0864F1E5503E200C41D71 /* OTImageView.swift */; };
 		D2D086521E55252400C41D71 /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086511E55252400C41D71 /* Transitions.swift */; };
+		D2D086551E552C8400C41D71 /* RestaurantAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086541E552C8400C41D71 /* RestaurantAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +84,7 @@
 		009573331DF2327D003412B9 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
 		00EE09711DF24D160096F568 /* PartialReservation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PartialReservation.json; sourceTree = "<group>"; };
 		00EE09731DF24D520096F568 /* FullReservation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FullReservation.json; sourceTree = "<group>"; };
-		D270B9681E526C6A00154DBC /* StoryboardTrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardTrait.swift; sourceTree = "<group>"; };
+		D270B9681E526C6A00154DBC /* StoryboardTrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardTrait.swift; path = ../StoryboardTrait.swift; sourceTree = "<group>"; };
 		D270B96E1E52895D00154DBC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D2BC2F9E1E5240C9008011E8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2BC2FA01E5240EC008011E8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -95,7 +96,8 @@
 		D2D0864A1E54F87100C41D71 /* DiningCellDishes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningCellDishes.swift; sourceTree = "<group>"; };
 		D2D0864C1E55039500C41D71 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		D2D0864F1E5503E200C41D71 /* OTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTImageView.swift; sourceTree = "<group>"; };
-		D2D086511E55252400C41D71 /* Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
+		D2D086511E55252400C41D71 /* Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transitions.swift; path = ../Transitions.swift; sourceTree = "<group>"; };
+		D2D086541E552C8400C41D71 /* RestaurantAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				009572FB1DF2210E003412B9 /* AppDelegate.swift */,
 				D270B96E1E52895D00154DBC /* Main.storyboard */,
+				D2D086531E552C6C00C41D71 /* Models */,
 				D2D086451E54F82500C41D71 /* Cells */,
 				D2D086421E54EF3C00C41D71 /* Services */,
 				D2BC2F9D1E5240C9008011E8 /* Controllers */,
@@ -158,8 +161,6 @@
 				009573021DF2210E003412B9 /* Assets.xcassets */,
 				009573041DF2210E003412B9 /* LaunchScreen.storyboard */,
 				009573071DF2210E003412B9 /* Info.plist */,
-				D270B9681E526C6A00154DBC /* StoryboardTrait.swift */,
-				D2D086511E55252400C41D71 /* Transitions.swift */,
 			);
 			path = DiningMode;
 			sourceTree = "<group>";
@@ -236,8 +237,18 @@
 			isa = PBXGroup;
 			children = (
 				D2D0864F1E5503E200C41D71 /* OTImageView.swift */,
+				D270B9681E526C6A00154DBC /* StoryboardTrait.swift */,
+				D2D086511E55252400C41D71 /* Transitions.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D2D086531E552C6C00C41D71 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2D086541E552C8400C41D71 /* RestaurantAnnotation.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +403,7 @@
 				009572FC1DF2210E003412B9 /* AppDelegate.swift in Sources */,
 				D2BC2FA11E5240EC008011E8 /* MainTabBarController.swift in Sources */,
 				D2D086501E5503E200C41D71 /* OTImageView.swift in Sources */,
+				D2D086551E552C8400C41D71 /* RestaurantAnnotation.swift in Sources */,
 				D270B9691E526C6A00154DBC /* StoryboardTrait.swift in Sources */,
 				0095732B1DF22154003412B9 /* Reservation.swift in Sources */,
 				0095732F1DF2252F003412B9 /* ReservationAssembler.swift in Sources */,

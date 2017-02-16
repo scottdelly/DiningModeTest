@@ -14,14 +14,12 @@ extension MainTabBarController: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let animator = self.transitionAnimator
         animator.origin = self.diningModeBanner!.frame.origin
-//        animator.origin.y += self.diningModeBanner!.bounds.size.height
         return animator
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let animator = self.transitionAnimator
         animator.origin = self.diningModeBanner!.frame.origin
-//        animator.origin.y += self.diningModeBanner!.bounds.size.height
         return animator
     }
     
