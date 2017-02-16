@@ -149,10 +149,40 @@ extension DiningModeVC: UITableViewDataSource {
         if let photo = dish.photos.first {
             cell.imageViewDish.image(withPhoto: photo)
         }
+        
+        let snippetRange = dish.snippet.content.range(from: dish.snippet.range)!
+        let snippetText = dish.snippet.content.substring(with: snippetRange)
+        
+        let attributedTitle = NSMutableAttributedString(string: "\(dish.name)\n", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
+        let attributedSnippet = NSMutableAttributedString(string: snippetText, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)])
+        for highlight in dish.snippet.highlights {
+            let locationInSnippet = highlight.location - dish.snippet.range.location
+            if locationInSnippet < 0 || locationInSnippet > snippetText.characters.count || locationInSnippet + highlight.length > snippetText.characters.count  {
+                continue
+            }
+            let updatedHighlight = NSMakeRange(locationInSnippet, highlight.length)
+            attributedSnippet.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: updatedHighlight)
+        }
+        attributedTitle.append(attributedSnippet)
+        
+        cell.labelSnippet.attributedText = attributedTitle
+        
         return cell
     }
 }
 
 extension DiningModeVC: UITableViewDelegate {
     
+}
+
+extension String {
+    func range(from nsRange: NSRange) -> Range<String.Index>? {
+        guard
+            let from16 = utf16.index(utf16.startIndex, offsetBy: nsRange.location, limitedBy: utf16.endIndex),
+            let to16 = utf16.index(from16, offsetBy: nsRange.length, limitedBy: utf16.endIndex),
+            let from = from16.samePosition(in: self),
+            let to = to16.samePosition(in: self)
+            else { return nil }
+        return from ..< to
+    }
 }
