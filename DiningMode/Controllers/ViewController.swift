@@ -11,18 +11,9 @@ import UIKit
 import AFNetworking
 
 class ViewController: UIViewController, StoryboardTrait {
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		// just to make sure everything links fine
-		AFHTTPSessionManager(baseURL: nil).get("", parameters: nil, progress: nil, success: nil, failure: nil)
-
-		// Do any additional setup after loading the view, typically from a nib.
-	}
     
     @IBAction func buttonShowBanner(_ sender: Any) {
-        NotificationCenter.default.post(name: BannerShowNotification, object: nil)
+        NotificationCenter.default.post(name: BannerShowNotification, object: nil, userInfo: ["reservationID": "FullReservation"])
     }
     
     @IBAction func buttonHideBannerTUIAction(_ sender: Any) {

@@ -24,6 +24,14 @@
 		D2BC2F9F1E5240C9008011E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC2F9E1E5240C9008011E8 /* ViewController.swift */; };
 		D2BC2FA11E5240EC008011E8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC2FA01E5240EC008011E8 /* MainTabBarController.swift */; };
 		D2BC2FA31E524114008011E8 /* DiningModeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC2FA21E524114008011E8 /* DiningModeVC.swift */; };
+		D2D0863C1E54EABA00C41D71 /* DiningModeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D0863B1E54EABA00C41D71 /* DiningModeVC.storyboard */; };
+		D2D086441E54EF4700C41D71 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086431E54EF4700C41D71 /* NetworkService.swift */; };
+		D2D086471E54F84000C41D71 /* DiningCellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086461E54F84000C41D71 /* DiningCellInfo.swift */; };
+		D2D086491E54F86300C41D71 /* DiningCellMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086481E54F86300C41D71 /* DiningCellMap.swift */; };
+		D2D0864B1E54F87100C41D71 /* DiningCellDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0864A1E54F87100C41D71 /* DiningCellDishes.swift */; };
+		D2D0864D1E55039500C41D71 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0864C1E55039500C41D71 /* ImageService.swift */; };
+		D2D086501E5503E200C41D71 /* OTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0864F1E5503E200C41D71 /* OTImageView.swift */; };
+		D2D086521E55252400C41D71 /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086511E55252400C41D71 /* Transitions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +88,14 @@
 		D2BC2F9E1E5240C9008011E8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2BC2FA01E5240EC008011E8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		D2BC2FA21E524114008011E8 /* DiningModeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningModeVC.swift; sourceTree = "<group>"; };
+		D2D0863B1E54EABA00C41D71 /* DiningModeVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DiningModeVC.storyboard; sourceTree = "<group>"; };
+		D2D086431E54EF4700C41D71 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D2D086461E54F84000C41D71 /* DiningCellInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningCellInfo.swift; sourceTree = "<group>"; };
+		D2D086481E54F86300C41D71 /* DiningCellMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningCellMap.swift; sourceTree = "<group>"; };
+		D2D0864A1E54F87100C41D71 /* DiningCellDishes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningCellDishes.swift; sourceTree = "<group>"; };
+		D2D0864C1E55039500C41D71 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		D2D0864F1E5503E200C41D71 /* OTImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTImageView.swift; sourceTree = "<group>"; };
+		D2D086511E55252400C41D71 /* Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,12 +150,16 @@
 			children = (
 				009572FB1DF2210E003412B9 /* AppDelegate.swift */,
 				D270B96E1E52895D00154DBC /* Main.storyboard */,
+				D2D086451E54F82500C41D71 /* Cells */,
+				D2D086421E54EF3C00C41D71 /* Services */,
 				D2BC2F9D1E5240C9008011E8 /* Controllers */,
+				D2D0864E1E5503D000C41D71 /* Utilities */,
 				009573291DF22145003412B9 /* Vendor */,
 				009573021DF2210E003412B9 /* Assets.xcassets */,
 				009573041DF2210E003412B9 /* LaunchScreen.storyboard */,
 				009573071DF2210E003412B9 /* Info.plist */,
 				D270B9681E526C6A00154DBC /* StoryboardTrait.swift */,
+				D2D086511E55252400C41D71 /* Transitions.swift */,
 			);
 			path = DiningMode;
 			sourceTree = "<group>";
@@ -188,8 +208,36 @@
 				D2BC2F9E1E5240C9008011E8 /* ViewController.swift */,
 				D2BC2FA01E5240EC008011E8 /* MainTabBarController.swift */,
 				D2BC2FA21E524114008011E8 /* DiningModeVC.swift */,
+				D2D0863B1E54EABA00C41D71 /* DiningModeVC.storyboard */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D2D086421E54EF3C00C41D71 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D2D086431E54EF4700C41D71 /* NetworkService.swift */,
+				D2D0864C1E55039500C41D71 /* ImageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D2D086451E54F82500C41D71 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2D086461E54F84000C41D71 /* DiningCellInfo.swift */,
+				D2D086481E54F86300C41D71 /* DiningCellMap.swift */,
+				D2D0864A1E54F87100C41D71 /* DiningCellDishes.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D2D0864E1E5503D000C41D71 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D2D0864F1E5503E200C41D71 /* OTImageView.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +356,7 @@
 				009573061DF2210E003412B9 /* LaunchScreen.storyboard in Resources */,
 				009573031DF2210E003412B9 /* Assets.xcassets in Resources */,
 				00EE09721DF24D160096F568 /* PartialReservation.json in Resources */,
+				D2D0863C1E54EABA00C41D71 /* DiningModeVC.storyboard in Resources */,
 				00EE09741DF24D520096F568 /* FullReservation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,11 +384,18 @@
 			files = (
 				D2BC2FA31E524114008011E8 /* DiningModeVC.swift in Sources */,
 				D2BC2F9F1E5240C9008011E8 /* ViewController.swift in Sources */,
+				D2D0864B1E54F87100C41D71 /* DiningCellDishes.swift in Sources */,
+				D2D086441E54EF4700C41D71 /* NetworkService.swift in Sources */,
+				D2D086521E55252400C41D71 /* Transitions.swift in Sources */,
+				D2D086471E54F84000C41D71 /* DiningCellInfo.swift in Sources */,
+				D2D0864D1E55039500C41D71 /* ImageService.swift in Sources */,
 				009572FC1DF2210E003412B9 /* AppDelegate.swift in Sources */,
 				D2BC2FA11E5240EC008011E8 /* MainTabBarController.swift in Sources */,
+				D2D086501E5503E200C41D71 /* OTImageView.swift in Sources */,
 				D270B9691E526C6A00154DBC /* StoryboardTrait.swift in Sources */,
 				0095732B1DF22154003412B9 /* Reservation.swift in Sources */,
 				0095732F1DF2252F003412B9 /* ReservationAssembler.swift in Sources */,
+				D2D086491E54F86300C41D71 /* DiningCellMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
